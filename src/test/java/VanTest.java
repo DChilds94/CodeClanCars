@@ -1,5 +1,7 @@
 import Vehicle.MotorBike;
 import Vehicle.Van;
+import components.Door;
+import components.Engine;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -7,11 +9,15 @@ import static org.junit.Assert.assertEquals;
 
 public class VanTest {
 
+    Door door;
+    Engine engine;
     Van van;
 
     @Before
     public void before(){
-        van = new Van(70000, "blue", "Mercedes", "Sprinter");
+        engine = new Engine("2.5L", 600);
+        door = new Door(5);
+        van = new Van(70000, "blue", "Mercedes", "Sprinter", engine, door);
     }
 
     @Test
@@ -33,5 +39,9 @@ public class VanTest {
     @Test
     public void canStartEngine(){
         assertEquals("Van has started", van.start());
+    }
+    @Test
+    public void canGetDoors(){
+        assertEquals(5, van.getNumberOfDoors());
     }
 }

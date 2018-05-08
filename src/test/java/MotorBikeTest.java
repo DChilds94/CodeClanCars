@@ -1,5 +1,6 @@
 import Vehicle.Car;
 import Vehicle.MotorBike;
+import components.Engine;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -7,11 +8,12 @@ import static org.junit.Assert.assertEquals;
 
 public class MotorBikeTest {
 
+    Engine engine;
     MotorBike motorBike;
 
     @Before
     public void before(){
-        motorBike = new MotorBike (50000, "blue", "Kawkski", "Ninja");
+        motorBike = new MotorBike (50000, "blue", "Kawkski", "Ninja", engine);
     }
 
     @Test
